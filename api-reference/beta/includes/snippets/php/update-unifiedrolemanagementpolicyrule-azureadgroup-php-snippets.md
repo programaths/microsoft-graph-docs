@@ -7,10 +7,10 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new UnifiedRoleManagementPolicyExpirationRule();
-$requestBody->set@odatatype('#microsoft.graph.unifiedRoleManagementPolicyExpirationRule');
+$requestBody->setOdataType('#microsoft.graph.unifiedRoleManagementPolicyExpirationRule');
 
 $requestBody->setId('Expiration_EndUser_Assignment');
 
@@ -33,7 +33,7 @@ $target->setEnforcedSettings([]);
 $requestBody->setTarget($target);
 
 
-$result = $graphServiceClient->policies()->roleManagementPolicies()->byRoleManagementPolicieId('unifiedRoleManagementPolicy-id')->rules()->byRuleId('unifiedRoleManagementPolicyRule-id')->patch($requestBody);
+$result = $graphServiceClient->policies()->roleManagementPolicies()->byUnifiedRoleManagementPolicyId('unifiedRoleManagementPolicy-id')->rules()->byUnifiedRoleManagementPolicyRuleId('unifiedRoleManagementPolicyRule-id')->patch($requestBody);
 
 
 ```

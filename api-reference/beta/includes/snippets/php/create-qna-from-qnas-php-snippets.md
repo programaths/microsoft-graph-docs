@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new Qna();
 $requestBody->setDisplayName('Global Country Holidays');
@@ -25,14 +25,13 @@ $keywords->setMatchSimilarKeywords(true);
 
 
 $requestBody->setKeywords($keywords);
-$requestBody->setAvailabilityStartDateTime(new DateTime('2020-09-21T20:01:37Z'));
+$requestBody->setAvailabilityStartDateTime(new \DateTime('2020-09-21T20:01:37Z'));
 
-$requestBody->setAvailabilityEndDateTime(new DateTime('2021-12-31T20:01:37Z'));
+$requestBody->setAvailabilityEndDateTime(new \DateTime('2021-12-31T20:01:37Z'));
 
 $requestBody->setLanguageTags(['en-us', ]);
 
-$requestBody->setPlatforms([$requestBody->setDevicePlatformType(new DevicePlatformType('ios'));
-]);
+$requestBody->setPlatforms([new DevicePlatformType('ios'),]);
 
 $requestBody->setState(new AnswerState('published'));
 

@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new TenantAppManagementPolicy();
 $requestBody->setIsEnabled(true);
@@ -18,7 +18,7 @@ $passwordCredentialsPasswordCredentialConfiguration1->setRestrictionType(new App
 
 $passwordCredentialsPasswordCredentialConfiguration1->setMaxLifetime(null);
 
-$passwordCredentialsPasswordCredentialConfiguration1->setRestrictForAppsCreatedAfterDateTime(new DateTime('2021-01-01T10:37:00Z'));
+$passwordCredentialsPasswordCredentialConfiguration1->setRestrictForAppsCreatedAfterDateTime(new \DateTime('2021-01-01T10:37:00Z'));
 
 
 $passwordCredentialsArray []= $passwordCredentialsPasswordCredentialConfiguration1;
@@ -27,7 +27,7 @@ $passwordCredentialsPasswordCredentialConfiguration2->setRestrictionType(new App
 
 $passwordCredentialsPasswordCredentialConfiguration2->setMaxLifetime(new \DateInterval('P4DT12H30M5S'));
 
-$passwordCredentialsPasswordCredentialConfiguration2->setRestrictForAppsCreatedAfterDateTime(new DateTime('2017-01-01T10:37:00Z'));
+$passwordCredentialsPasswordCredentialConfiguration2->setRestrictForAppsCreatedAfterDateTime(new \DateTime('2017-01-01T10:37:00Z'));
 
 
 $passwordCredentialsArray []= $passwordCredentialsPasswordCredentialConfiguration2;
@@ -36,7 +36,7 @@ $passwordCredentialsPasswordCredentialConfiguration3->setRestrictionType(new App
 
 $passwordCredentialsPasswordCredentialConfiguration3->setMaxLifetime(null);
 
-$passwordCredentialsPasswordCredentialConfiguration3->setRestrictForAppsCreatedAfterDateTime(new DateTime('2021-01-01T10:37:00Z'));
+$passwordCredentialsPasswordCredentialConfiguration3->setRestrictForAppsCreatedAfterDateTime(new \DateTime('2021-01-01T10:37:00Z'));
 
 
 $passwordCredentialsArray []= $passwordCredentialsPasswordCredentialConfiguration3;
@@ -45,7 +45,7 @@ $passwordCredentialsPasswordCredentialConfiguration4->setRestrictionType(new App
 
 $passwordCredentialsPasswordCredentialConfiguration4->setMaxLifetime(null);
 
-$passwordCredentialsPasswordCredentialConfiguration4->setRestrictForAppsCreatedAfterDateTime(new DateTime('2015-01-01T10:37:00Z'));
+$passwordCredentialsPasswordCredentialConfiguration4->setRestrictForAppsCreatedAfterDateTime(new \DateTime('2015-01-01T10:37:00Z'));
 
 
 $passwordCredentialsArray []= $passwordCredentialsPasswordCredentialConfiguration4;
@@ -54,7 +54,7 @@ $passwordCredentialsPasswordCredentialConfiguration5->setRestrictionType(new App
 
 $passwordCredentialsPasswordCredentialConfiguration5->setMaxLifetime(new \DateInterval('P40D'));
 
-$passwordCredentialsPasswordCredentialConfiguration5->setRestrictForAppsCreatedAfterDateTime(new DateTime('2015-01-01T10:37:00Z'));
+$passwordCredentialsPasswordCredentialConfiguration5->setRestrictForAppsCreatedAfterDateTime(new \DateTime('2015-01-01T10:37:00Z'));
 
 
 $passwordCredentialsArray []= $passwordCredentialsPasswordCredentialConfiguration5;
@@ -66,7 +66,7 @@ $keyCredentialsKeyCredentialConfiguration1->setRestrictionType(new AppKeyCredent
 
 $keyCredentialsKeyCredentialConfiguration1->setMaxLifetime(new \DateInterval('P30D'));
 
-$keyCredentialsKeyCredentialConfiguration1->setRestrictForAppsCreatedAfterDateTime(new DateTime('2015-01-01T10:37:00Z'));
+$keyCredentialsKeyCredentialConfiguration1->setRestrictForAppsCreatedAfterDateTime(new \DateTime('2015-01-01T10:37:00Z'));
 
 
 $keyCredentialsArray []= $keyCredentialsKeyCredentialConfiguration1;

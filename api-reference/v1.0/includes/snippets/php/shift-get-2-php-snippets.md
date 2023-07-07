@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new ShiftPreferences();
 $requestBody->setId('SHPR_eeab4fb1-20e5-48ca-ad9b-98119d94bee7');
@@ -17,10 +17,7 @@ $availabilityShiftAvailability1Recurrence = new PatternedRecurrence();
 $availabilityShiftAvailability1RecurrencePattern = new RecurrencePattern();
 $availabilityShiftAvailability1RecurrencePattern->setType(new RecurrencePatternType('weekly'));
 
-$availabilityShiftAvailability1RecurrencePattern->setDaysOfWeek([$availabilityShiftAvailability1RecurrencePattern->setDayOfWeek(new DayOfWeek('monday'));
-$availabilityShiftAvailability1RecurrencePattern->setDayOfWeek(new DayOfWeek('wednesday'));
-$availabilityShiftAvailability1RecurrencePattern->setDayOfWeek(new DayOfWeek('friday'));
-]);
+$availabilityShiftAvailability1RecurrencePattern->setDaysOfWeek([new DayOfWeek('monday'),new DayOfWeek('wednesday'),new DayOfWeek('friday'),]);
 
 $availabilityShiftAvailability1RecurrencePattern->setInterval(1);
 

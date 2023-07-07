@@ -7,13 +7,13 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new ExternalUsersSelfServiceSignUpEventsFlow();
-$requestBody->set@odatatype('#microsoft.graph.externalUsersSelfServiceSignUpEventsFlow');
+$requestBody->setOdataType('#microsoft.graph.externalUsersSelfServiceSignUpEventsFlow');
 
 $onAttributeCollection = new OnAttributeCollectionExternalUsersSelfServiceSignUp();
-$onAttributeCollection->set@odatatype('#microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp');
+$onAttributeCollection->setOdataType('#microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp');
 
 $onAttributeCollectionAttributeCollectionPage = new AuthenticationAttributeCollectionPage();
 $OnAttributeCollectionAttributeCollectionPage->setCustomStringsFileId(null);

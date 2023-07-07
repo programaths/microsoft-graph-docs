@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new IdentityUserFlowAttributeAssignment();
 $requestBody->setIsOptional(false);
@@ -27,7 +27,7 @@ $userAttribute->setId('extension_guid_shoeSize');
 $requestBody->setUserAttribute($userAttribute);
 
 
-$result = $graphServiceClient->identity()->b2xUserFlows()->byB2xUserFlowId('b2xIdentityUserFlow-id')->userAttributeAssignments()->post($requestBody);
+$result = $graphServiceClient->identity()->b2xUserFlows()->byB2xIdentityUserFlowId('b2xIdentityUserFlow-id')->userAttributeAssignments()->post($requestBody);
 
 
 ```

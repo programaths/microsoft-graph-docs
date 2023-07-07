@@ -7,12 +7,12 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new Alert();
 $requestBody->setAssignedTo('String');
 
-$requestBody->setClosedDateTime(new DateTime('String (timestamp)'));
+$requestBody->setClosedDateTime(new \DateTime('String (timestamp)'));
 
 $requestBody->setComments(['String', ]);
 

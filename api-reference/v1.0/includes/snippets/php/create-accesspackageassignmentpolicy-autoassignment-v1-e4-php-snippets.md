@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new AccessPackageAssignmentPolicy();
 $requestBody->setDisplayName('A Policy With Questions');
@@ -49,7 +49,7 @@ $stagesAccessPackageApprovalStage1->setEscalationApprovers([]);
 $stagesAccessPackageApprovalStage1->setFallbackEscalationApprovers([]);
 
 $primaryApproversSubjectSet1 = new SingleUser();
-$primaryApproversSubjectSet1->set@odatatype('#microsoft.graph.singleUser');
+$primaryApproversSubjectSet1->setOdataType('#microsoft.graph.singleUser');
 
 $primaryApproversSubjectSet1->setUserId('08a551cb-575a-4343-b914-f6e42798bd20');
 
@@ -66,7 +66,7 @@ $requestApprovalSettings->setStages($stagesArray);
 
 $requestBody->setRequestApprovalSettings($requestApprovalSettings);
 $questionsAccessPackageQuestion1 = new AccessPackageMultipleChoiceQuestion();
-$questionsAccessPackageQuestion1->set@odatatype('#microsoft.graph.accessPackageMultipleChoiceQuestion');
+$questionsAccessPackageQuestion1->setOdataType('#microsoft.graph.accessPackageMultipleChoiceQuestion');
 
 $questionsAccessPackageQuestion1->setSequence(1);
 
@@ -79,7 +79,7 @@ $questionsAccessPackageQuestion1->setText('What country are you working from?');
 $questionsAccessPackageQuestion1->setIsMultipleSelectionAllowed(false);
 
 $choicesAccessPackageAnswerChoice1 = new AccessPackageAnswerChoice();
-$choicesAccessPackageAnswerChoice1->set@odatatype('microsoft.graph.accessPackageAnswerChoice');
+$choicesAccessPackageAnswerChoice1->setOdataType('microsoft.graph.accessPackageAnswerChoice');
 
 $choicesAccessPackageAnswerChoice1->setActualValue('KE');
 
@@ -88,7 +88,7 @@ $choicesAccessPackageAnswerChoice1->setText('Kenya');
 
 $choicesArray []= $choicesAccessPackageAnswerChoice1;
 $choicesAccessPackageAnswerChoice2 = new AccessPackageAnswerChoice();
-$choicesAccessPackageAnswerChoice2->set@odatatype('microsoft.graph.accessPackageAnswerChoice');
+$choicesAccessPackageAnswerChoice2->setOdataType('microsoft.graph.accessPackageAnswerChoice');
 
 $choicesAccessPackageAnswerChoice2->setActualValue('US');
 
@@ -97,7 +97,7 @@ $choicesAccessPackageAnswerChoice2->setText('United States');
 
 $choicesArray []= $choicesAccessPackageAnswerChoice2;
 $choicesAccessPackageAnswerChoice3 = new AccessPackageAnswerChoice();
-$choicesAccessPackageAnswerChoice3->set@odatatype('microsoft.graph.accessPackageAnswerChoice');
+$choicesAccessPackageAnswerChoice3->setOdataType('microsoft.graph.accessPackageAnswerChoice');
 
 $choicesAccessPackageAnswerChoice3->setActualValue('GY');
 
@@ -106,7 +106,7 @@ $choicesAccessPackageAnswerChoice3->setText('Guyana');
 
 $choicesArray []= $choicesAccessPackageAnswerChoice3;
 $choicesAccessPackageAnswerChoice4 = new AccessPackageAnswerChoice();
-$choicesAccessPackageAnswerChoice4->set@odatatype('microsoft.graph.accessPackageAnswerChoice');
+$choicesAccessPackageAnswerChoice4->setOdataType('microsoft.graph.accessPackageAnswerChoice');
 
 $choicesAccessPackageAnswerChoice4->setActualValue('BD');
 
@@ -115,7 +115,7 @@ $choicesAccessPackageAnswerChoice4->setText('Bangladesh');
 
 $choicesArray []= $choicesAccessPackageAnswerChoice4;
 $choicesAccessPackageAnswerChoice5 = new AccessPackageAnswerChoice();
-$choicesAccessPackageAnswerChoice5->set@odatatype('microsoft.graph.accessPackageAnswerChoice');
+$choicesAccessPackageAnswerChoice5->setOdataType('microsoft.graph.accessPackageAnswerChoice');
 
 $choicesAccessPackageAnswerChoice5->setActualValue('JP');
 
@@ -129,7 +129,7 @@ $questionsAccessPackageQuestion1->setChoices($choicesArray);
 
 $questionsArray []= $questionsAccessPackageQuestion1;
 $questionsAccessPackageQuestion2 = new AccessPackageTextInputQuestion();
-$questionsAccessPackageQuestion2->set@odatatype('#microsoft.graph.accessPackageTextInputQuestion');
+$questionsAccessPackageQuestion2->setOdataType('#microsoft.graph.accessPackageTextInputQuestion');
 
 $questionsAccessPackageQuestion2->setSequence(2);
 

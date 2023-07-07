@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new RedirectPostRequestBody();
 $requestBody->setDestinationPrinterId('9a3b3956-ce5b-4d06-a605-5b0bd3e9ddea');
@@ -72,7 +72,7 @@ $configuration->setFitPdfToPage(false);
 $requestBody->setConfiguration($configuration);
 
 
-$result = $graphServiceClient->print()->printers()->byPrinterId('printer-id')->jobs()->byJobId('printJob-id')->redirect()->post($requestBody);
+$result = $graphServiceClient->print()->printers()->byPrinterId('printer-id')->jobs()->byPrintJobId('printJob-id')->redirect()->post($requestBody);
 
 
 ```

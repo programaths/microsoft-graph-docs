@@ -7,18 +7,18 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new BookingService();
-$requestBody->set@odatatype('#microsoft.graph.bookingService');
+$requestBody->setOdataType('#microsoft.graph.bookingService');
 
 $requestBody->setDefaultDuration(new \DateInterval('PT1H30M'));
 
 $defaultLocation = new Location();
-$defaultLocation->set@odatatype('#microsoft.graph.location');
+$defaultLocation->setOdataType('#microsoft.graph.location');
 
 $defaultLocationAddress = new PhysicalAddress();
-$defaultLocationAddress->set@odatatype('#microsoft.graph.physicalAddress');
+$defaultLocationAddress->setOdataType('#microsoft.graph.physicalAddress');
 
 $defaultLocationAddress->setCity('Buffalo');
 
@@ -70,7 +70,7 @@ $requestBody->setDefaultPrice(10);
 $requestBody->setDefaultPriceType(new BookingPriceType('fixedprice'));
 
 $defaultRemindersBookingReminder1 = new BookingReminder();
-$defaultRemindersBookingReminder1->set@odatatype('#microsoft.graph.bookingReminder');
+$defaultRemindersBookingReminder1->setOdataType('#microsoft.graph.bookingReminder');
 
 $defaultRemindersBookingReminder1->setMessage('Please be reminded that this service is tomorrow.');
 
@@ -108,7 +108,7 @@ $requestBody->setPostBuffer(new \DateInterval('PT10M'));
 $requestBody->setPreBuffer(new \DateInterval('PT5M'));
 
 $schedulingPolicy = new BookingSchedulingPolicy();
-$schedulingPolicy->set@odatatype('#microsoft.graph.bookingSchedulingPolicy');
+$schedulingPolicy->setOdataType('#microsoft.graph.bookingSchedulingPolicy');
 
 $schedulingPolicy->setAllowStaffSelection(true);
 
@@ -136,7 +136,7 @@ $requestBody->setAdditionalData($additionalData);
 
 
 
-$result = $graphServiceClient->bookingBusinesses()->byBookingBusinesseId('bookingBusiness-id')->services()->post($requestBody);
+$result = $graphServiceClient->bookingBusinesses()->byBookingBusinessId('bookingBusiness-id')->services()->post($requestBody);
 
 
 ```

@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new OnPremisesDirectorySynchronization();
 $configuration = new OnPremisesDirectorySynchronizationConfiguration();
@@ -27,7 +27,7 @@ $features->setGroupWriteBackEnabled(true);
 $requestBody->setFeatures($features);
 
 
-$result = $graphServiceClient->directory()->onPremisesSynchronization()->byOnPremisesSynchronization()Id('onPremisesDirectorySynchronization-id')->patch($requestBody);
+$result = $graphServiceClient->directory()->onPremisesSynchronization()->byOnPremisesDirectorySynchronizationId('onPremisesDirectorySynchronization-id')->patch($requestBody);
 
 
 ```

@@ -7,10 +7,10 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new X509CertificateAuthenticationMethodConfiguration();
-$requestBody->set@odatatype('#microsoft.graph.x509CertificateAuthenticationMethodConfiguration');
+$requestBody->setOdataType('#microsoft.graph.x509CertificateAuthenticationMethodConfiguration');
 
 $requestBody->setId('X509Certificate');
 

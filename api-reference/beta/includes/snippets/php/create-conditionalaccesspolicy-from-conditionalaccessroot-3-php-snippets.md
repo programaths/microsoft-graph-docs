@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new ConditionalAccessPolicy();
 $requestBody->setDisplayName('Demo app for documentation');
@@ -15,14 +15,9 @@ $requestBody->setDisplayName('Demo app for documentation');
 $requestBody->setState(new ConditionalAccessPolicyState('disabled'));
 
 $conditions = new ConditionalAccessConditionSet();
-$conditions->setSignInRiskLevels([$conditions->setRiskLevel(new RiskLevel('high'));
-$conditions->setRiskLevel(new RiskLevel('medium'));
-]);
+$conditions->setSignInRiskLevels([new RiskLevel('high'),new RiskLevel('medium'),]);
 
-$conditions->setClientAppTypes([$conditions->setConditionalAccessClientApp(new ConditionalAccessClientApp('mobileappsanddesktopclients'));
-$conditions->setConditionalAccessClientApp(new ConditionalAccessClientApp('exchangeactivesync'));
-$conditions->setConditionalAccessClientApp(new ConditionalAccessClientApp('other'));
-]);
+$conditions->setClientAppTypes([new ConditionalAccessClientApp('mobileappsanddesktopclients'),new ConditionalAccessClientApp('exchangeactivesync'),new ConditionalAccessClientApp('other'),]);
 
 $conditionsApplications = new ConditionalAccessApplications();
 $conditionsApplications->setIncludeApplications(['All', ]);
@@ -49,12 +44,9 @@ $conditionsUsers->setExcludeRoles(['b0f54661-2d74-4c50-afa3-1ec803f12efe', ]);
 
 $conditions->setUsers($conditionsUsers);
 $conditionsPlatforms = new ConditionalAccessPlatforms();
-$conditionsPlatforms->setIncludePlatforms([$conditionsPlatforms->setConditionalAccessDevicePlatform(new ConditionalAccessDevicePlatform('all'));
-]);
+$conditionsPlatforms->setIncludePlatforms([new ConditionalAccessDevicePlatform('all'),]);
 
-$conditionsPlatforms->setExcludePlatforms([$conditionsPlatforms->setConditionalAccessDevicePlatform(new ConditionalAccessDevicePlatform('ios'));
-$conditionsPlatforms->setConditionalAccessDevicePlatform(new ConditionalAccessDevicePlatform('windowsphone'));
-]);
+$conditionsPlatforms->setExcludePlatforms([new ConditionalAccessDevicePlatform('ios'),new ConditionalAccessDevicePlatform('windowsphone'),]);
 
 
 $conditions->setPlatforms($conditionsPlatforms);
@@ -77,12 +69,7 @@ $requestBody->setConditions($conditions);
 $grantControls = new ConditionalAccessGrantControls();
 $grantControls->setOperator('OR');
 
-$grantControls->setBuiltInControls([$grantControls->setConditionalAccessGrantControl(new ConditionalAccessGrantControl('mfa'));
-$grantControls->setConditionalAccessGrantControl(new ConditionalAccessGrantControl('compliantdevice'));
-$grantControls->setConditionalAccessGrantControl(new ConditionalAccessGrantControl('domainjoineddevice'));
-$grantControls->setConditionalAccessGrantControl(new ConditionalAccessGrantControl('approvedapplication'));
-$grantControls->setConditionalAccessGrantControl(new ConditionalAccessGrantControl('compliantapplication'));
-]);
+$grantControls->setBuiltInControls([new ConditionalAccessGrantControl('mfa'),new ConditionalAccessGrantControl('compliantdevice'),new ConditionalAccessGrantControl('domainjoineddevice'),new ConditionalAccessGrantControl('approvedapplication'),new ConditionalAccessGrantControl('compliantapplication'),]);
 
 $grantControls->setCustomAuthenticationFactors([]);
 

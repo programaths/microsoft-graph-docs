@@ -7,14 +7,14 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new TransferPostRequestBody();
 $transferTarget = new InvitationParticipantInfo();
 $transferTargetIdentity = new IdentitySet();
 $additionalData = [
 		'phone' => $transferTargetIdentity = new Phone();
-$		transferTargetIdentity->set@odatatype('#microsoft.graph.identity');
+$		transferTargetIdentity->setOdataType('#microsoft.graph.identity');
 
 $		transferTargetIdentity->setId('+12345678901');
 

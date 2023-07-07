@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new Workflow();
 $requestBody->setCategory(new LifecycleWorkflowCategory('leaver'));
@@ -21,7 +21,7 @@ $requestBody->setIsEnabled(true);
 $requestBody->setIsSchedulingEnabled(false);
 
 $executionConditions = new OnDemandExecutionOnly();
-$executionConditions->set@odatatype('#microsoft.graph.identityGovernance.onDemandExecutionOnly');
+$executionConditions->setOdataType('#microsoft.graph.identityGovernance.onDemandExecutionOnly');
 
 
 $requestBody->setExecutionConditions($executionConditions);

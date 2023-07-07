@@ -7,22 +7,21 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new UnifiedRoleManagementPolicyEnablementRule();
-$requestBody->set@odatatype('#microsoft.graph.unifiedRoleManagementPolicyEnablementRule');
+$requestBody->setOdataType('#microsoft.graph.unifiedRoleManagementPolicyEnablementRule');
 
 $requestBody->setId('Enablement_Admin_Assignment');
 
 $requestBody->setEnabledRules(['Justification', 'MultiFactorAuthentication', ]);
 
 $target = new UnifiedRoleManagementPolicyRuleTarget();
-$target->set@odatatype('microsoft.graph.unifiedRoleManagementPolicyRuleTarget');
+$target->setOdataType('microsoft.graph.unifiedRoleManagementPolicyRuleTarget');
 
 $target->setCaller('Admin');
 
-$target->setOperations([$target->setUnifiedRoleManagementPolicyRuleTargetOperations(new UnifiedRoleManagementPolicyRuleTargetOperations('all'));
-]);
+$target->setOperations([new UnifiedRoleManagementPolicyRuleTargetOperations('all'),]);
 
 $target->setLevel('Assignment');
 
@@ -34,7 +33,7 @@ $target->setEnforcedSettings([]);
 $requestBody->setTarget($target);
 
 
-$result = $graphServiceClient->policies()->roleManagementPolicies()->byRoleManagementPolicieId('unifiedRoleManagementPolicy-id')->rules()->byRuleId('unifiedRoleManagementPolicyRule-id')->patch($requestBody);
+$result = $graphServiceClient->policies()->roleManagementPolicies()->byUnifiedRoleManagementPolicyId('unifiedRoleManagementPolicy-id')->rules()->byUnifiedRoleManagementPolicyRuleId('unifiedRoleManagementPolicyRule-id')->patch($requestBody);
 
 
 ```

@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new Bookmark();
 $requestBody->setDisplayName('Contoso Install Site');
@@ -29,8 +29,7 @@ $requestBody->setAvailabilityStartDateTime(null);
 
 $requestBody->setAvailabilityEndDateTime(null);
 
-$requestBody->setPlatforms([$requestBody->setDevicePlatformType(new DevicePlatformType('windows'));
-]);
+$requestBody->setPlatforms([new DevicePlatformType('windows'),]);
 
 $targetedVariationsAnswerVariant1 = new AnswerVariant();
 $targetedVariationsAnswerVariant1->setLanguageTag('es-es');

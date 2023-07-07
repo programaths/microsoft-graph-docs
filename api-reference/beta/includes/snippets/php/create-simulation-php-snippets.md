@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new Simulation();
 $requestBody->setDisplayName('Graph Simulation');
@@ -21,7 +21,7 @@ $requestBody->setStatus(new SimulationStatus('scheduled'));
 $requestBody->setDurationInDays(3);
 
 $includedAccountTarget = new AddressBookAccountTargetContent();
-$includedAccountTarget->set@odatatype('#microsoft.graph.addressBookAccountTargetContent');
+$includedAccountTarget->setOdataType('#microsoft.graph.addressBookAccountTargetContent');
 
 $includedAccountTarget->setType(new AccountTargetContentType('addressbook'));
 

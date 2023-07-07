@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new Workflow();
 $requestBody->setCategory(new LifecycleWorkflowCategory('joiner'));
@@ -21,17 +21,17 @@ $requestBody->setIsEnabled(true);
 $requestBody->setIsSchedulingEnabled(true);
 
 $executionConditions = new TriggerAndScopeBasedConditions();
-$executionConditions->set@odatatype('#microsoft.graph.identityGovernance.triggerAndScopeBasedConditions');
+$executionConditions->setOdataType('#microsoft.graph.identityGovernance.triggerAndScopeBasedConditions');
 
 $executionConditionsScope = new RuleBasedSubjectSet();
-$executionConditionsScope->set@odatatype('#microsoft.graph.identityGovernance.ruleBasedSubjectSet');
+$executionConditionsScope->setOdataType('#microsoft.graph.identityGovernance.ruleBasedSubjectSet');
 
 $executionConditionsScope->setRule('(country eq \'Australia\')');
 
 
 $executionConditions->setScope($executionConditionsScope);
 $executionConditionsTrigger = new TimeBasedAttributeTrigger();
-$executionConditionsTrigger->set@odatatype('#microsoft.graph.identityGovernance.timeBasedAttributeTrigger');
+$executionConditionsTrigger->setOdataType('#microsoft.graph.identityGovernance.timeBasedAttributeTrigger');
 
 $executionConditionsTrigger->setTimeBasedAttribute(new WorkflowTriggerTimeBasedAttribute('employeehiredate'));
 

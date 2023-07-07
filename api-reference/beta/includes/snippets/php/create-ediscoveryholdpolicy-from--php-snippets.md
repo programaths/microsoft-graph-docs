@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new EdiscoveryHoldPolicy();
 $requestBody->setDisplayname('My legalHold with sources');
@@ -15,27 +15,27 @@ $requestBody->setDisplayname('My legalHold with sources');
 $requestBody->setDescription('Created from Graph API');
 
 $additionalData = [
-		'userSources@odata.bind' => $userSources@odatabind1 = new ();
-$		userSources@odatabind1->set@odatatype('microsoft.graph.security.userSource');
+		'userSources@odata.bind' => $userSourcesOdataBind1 = new ();
+$		userSourcesOdataBind1->setOdataType('microsoft.graph.security.userSource');
 
-$		userSources@odatabind1->setEmail('SalesTeam@M365x809305.OnMicrosoft.com');
-
-
-$userSources@odata.bindArray []= $userSources@odatabind1;
-$requestBody->setUserSources@odatabind($userSources@odata.bindArray);
+$		userSourcesOdataBind1->setEmail('SalesTeam@M365x809305.OnMicrosoft.com');
 
 
-	'siteSources@odata.bind' => $siteSources@odatabind1 = new ();
-$	siteSources@odatabind1->set@odatatype('microsoft.graph.security.siteSource');
-
-$siteSources@odatabind1Site = new Site();
-$	siteSources@odatabind1Site->setWebUrl('https://m365x809305.sharepoint.com/sites/Design-topsecret');
+$userSources@odata.bindArray []= $userSourcesOdataBind1;
+$requestBody->setUserSourcesOdataBind($userSources@odata.bindArray);
 
 
-$siteSources@odatabind1->setSite($siteSources@odatabind1Site);
+	'siteSources@odata.bind' => $siteSourcesOdataBind1 = new ();
+$	siteSourcesOdataBind1->setOdataType('microsoft.graph.security.siteSource');
 
-$siteSources@odata.bindArray []= $siteSources@odatabind1;
-$requestBody->setSiteSources@odatabind($siteSources@odata.bindArray);
+$siteSourcesOdataBind1Site = new Site();
+$	siteSourcesOdataBind1Site->setWebUrl('https://m365x809305.sharepoint.com/sites/Design-topsecret');
+
+
+$siteSourcesOdataBind1->setSite($siteSourcesOdataBind1Site);
+
+$siteSources@odata.bindArray []= $siteSourcesOdataBind1;
+$requestBody->setSiteSourcesOdataBind($siteSources@odata.bindArray);
 
 
 ];

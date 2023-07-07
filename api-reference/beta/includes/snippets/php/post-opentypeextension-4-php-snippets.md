@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new ReplyPostRequestBody();
 $post = new Post();
@@ -19,7 +19,7 @@ $postBody->setContent('<html><body><div><div><div><div>When and where? </div></d
 
 $post->setBody($postBody);
 $extensionsExtension1 = new OpenTypeExtension();
-$extensionsExtension1->set@odatatype('microsoft.graph.openTypeExtension');
+$extensionsExtension1->setOdataType('microsoft.graph.openTypeExtension');
 
 $extensionsExtension1->setExtensionName('Com.Contoso.HR');
 
@@ -40,7 +40,7 @@ $post->setExtensions($extensionsArray);
 $requestBody->setPost($post);
 
 
-$graphServiceClient->groups()->byGroupId('group-id')->threads()->byThreadId('conversationThread-id')->posts()->byPostId('post-id')->reply()->post($requestBody);
+$graphServiceClient->groups()->byGroupId('group-id')->threads()->byConversationThreadId('conversationThread-id')->posts()->byPostId('post-id')->reply()->post($requestBody);
 
 
 ```

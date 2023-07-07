@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new SubmitTiIndicatorsPostRequestBody();
 $valueTiIndicator1 = new TiIndicator();
@@ -17,7 +17,7 @@ $valueTiIndicator1->setConfidence(0);
 
 $valueTiIndicator1->setDescription('This is a canary indicator for demo purpose. Take no action on any observables set in this indicator.');
 
-$valueTiIndicator1->setExpirationDateTime(new DateTime('2019-03-01T21:44:03.1668987+00:00'));
+$valueTiIndicator1->setExpirationDateTime(new \DateTime('2019-03-01T21:44:03.1668987+00:00'));
 
 $valueTiIndicator1->setExternalId('Test--8586509942423126760MS164-0');
 
@@ -48,7 +48,7 @@ $valueTiIndicator2->setConfidence(0);
 
 $valueTiIndicator2->setDescription('This is a canary indicator for demo purpose. Take no action on any observables set in this indicator.');
 
-$valueTiIndicator2->setExpirationDateTime(new DateTime('2019-03-01T21:44:03.1748779+00:00'));
+$valueTiIndicator2->setExpirationDateTime(new \DateTime('2019-03-01T21:44:03.1748779+00:00'));
 
 $valueTiIndicator2->setExternalId('Test--8586509942423126760MS164-1');
 

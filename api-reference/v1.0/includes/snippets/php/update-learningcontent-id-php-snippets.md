@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new LearningContent();
 $requestBody->setTitle('Manage classes, resources, assessment, and planning in Microsoft Teams with Beedle');
@@ -28,9 +28,9 @@ $requestBody->setDuration(new \DateInterval('PT20M'));
 
 $requestBody->setFormat('Book');
 
-$requestBody->setCreatedDateTime(new DateTime('2018-01-01T00:00:00Z'));
+$requestBody->setCreatedDateTime(new \DateTime('2018-01-01T00:00:00Z'));
 
-$requestBody->setLastModifiedDateTime(new DateTime('2021-04-01T04:26:06.1995367Z'));
+$requestBody->setLastModifiedDateTime(new \DateTime('2021-04-01T04:26:06.1995367Z'));
 
 $requestBody->setContributors(['Lina Wagner', 'Lisa Richter', ]);
 

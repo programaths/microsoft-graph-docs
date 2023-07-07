@@ -7,20 +7,20 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new RetentionEvent();
-$requestBody->set@odatatype('#microsoft.graph.security.retentionEvent');
+$requestBody->setOdataType('#microsoft.graph.security.retentionEvent');
 
 $requestBody->setDisplayName('String');
 
 $requestBody->setDescription('String');
 
-$requestBody->setEventTriggerDateTime(new DateTime('String (timestamp)'));
+$requestBody->setEventTriggerDateTime(new \DateTime('String (timestamp)'));
 
 $additionalData = [
 		'eventQuery' => $eventQuery1 = new ();
-$		eventQuery1->set@odatatype('microsoft.graph.security.eventQuery');
+$		eventQuery1->setOdataType('microsoft.graph.security.eventQuery');
 
 
 $eventQueryArray []= $eventQuery1;

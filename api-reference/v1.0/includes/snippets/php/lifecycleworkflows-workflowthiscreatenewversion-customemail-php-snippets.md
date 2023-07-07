@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new CreateNewVersionPostRequestBody();
 $additionalData = [
@@ -17,17 +17,17 @@ $additionalData = [
 		'isEnabled' => true,
 		'isSchedulingEnabled' => false,
 		'executionConditions' => $requestBody = new ExecutionConditions();
-$		requestBody->set@odatatype('#microsoft.graph.identityGovernance.triggerAndScopeBasedConditions');
+$		requestBody->setOdataType('#microsoft.graph.identityGovernance.triggerAndScopeBasedConditions');
 
 $scope = new Scope();
-$		scope->set@odatatype('#microsoft.graph.identityGovernance.ruleBasedSubjectSet');
+$		scope->setOdataType('#microsoft.graph.identityGovernance.ruleBasedSubjectSet');
 
 $		scope->setRule('(department eq \'Marketing\')');
 
 
 $requestBody->setScope($scope);
 $trigger = new Trigger();
-$		trigger->set@odatatype('#microsoft.graph.identityGovernance.timeBasedAttributeTrigger');
+$		trigger->setOdataType('#microsoft.graph.identityGovernance.timeBasedAttributeTrigger');
 
 $		trigger->setTimeBasedAttribute('employeeHireDate');
 

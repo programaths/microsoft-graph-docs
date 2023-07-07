@@ -7,15 +7,15 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new ItemAttachment();
-$requestBody->set@odatatype('#microsoft.graph.itemAttachment');
+$requestBody->setOdataType('#microsoft.graph.itemAttachment');
 
 $requestBody->setName('Holiday event');
 
 $item = new Event();
-$item->set@odatatype('microsoft.graph.event');
+$item->setOdataType('microsoft.graph.event');
 
 $item->setSubject('Discuss gifts for children');
 
@@ -44,7 +44,7 @@ $item->setEnd($itemEnd);
 $requestBody->setItem($item);
 
 
-$result = $graphServiceClient->me()->outlook()->tasks()->byTaskId('outlookTask-id')->attachments()->post($requestBody);
+$result = $graphServiceClient->me()->outlook()->tasks()->byOutlookTaskId('outlookTask-id')->attachments()->post($requestBody);
 
 
 ```

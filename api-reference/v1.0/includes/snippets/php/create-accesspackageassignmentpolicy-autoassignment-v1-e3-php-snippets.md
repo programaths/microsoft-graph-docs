@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new AccessPackageAssignmentPolicy();
 $requestBody->setDisplayName('Sales department users');
@@ -17,7 +17,7 @@ $requestBody->setDescription('All users from sales department');
 $requestBody->setAllowedTargetScope(new AllowedTargetScope('specificdirectoryusers'));
 
 $specificAllowedTargetsSubjectSet1 = new AttributeRuleMembers();
-$specificAllowedTargetsSubjectSet1->set@odatatype('#microsoft.graph.attributeRuleMembers');
+$specificAllowedTargetsSubjectSet1->setOdataType('#microsoft.graph.attributeRuleMembers');
 
 $specificAllowedTargetsSubjectSet1->setDescription('Membership rule for all users from sales department');
 

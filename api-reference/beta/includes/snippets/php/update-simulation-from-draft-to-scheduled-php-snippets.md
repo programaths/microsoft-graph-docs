@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new Simulation();
 $requestBody->setId('2f5548d1-0dd8-4cc8-9de0-e0d6ec7ea3dc');
@@ -23,7 +23,7 @@ $requestBody->setAttackType(new SimulationAttackType('social'));
 $requestBody->setStatus(new SimulationStatus('scheduled'));
 
 $includedAccountTarget = new AddressBookAccountTargetContent();
-$includedAccountTarget->set@odatatype('#microsoft.graph.addressBookAccountTargetContent');
+$includedAccountTarget->setOdataType('#microsoft.graph.addressBookAccountTargetContent');
 
 $includedAccountTarget->setType(new AccountTargetContentType('addressbook'));
 
@@ -32,7 +32,7 @@ $includedAccountTarget->setAccountTargetEmails(['faiza@contoso.com', ]);
 
 $requestBody->setIncludedAccountTarget($includedAccountTarget);
 $excludedAccountTarget = new AddressBookAccountTargetContent();
-$excludedAccountTarget->set@odatatype('#microsoft.graph.addressBookAccountTargetContent');
+$excludedAccountTarget->setOdataType('#microsoft.graph.addressBookAccountTargetContent');
 
 $excludedAccountTarget->setType(new AccountTargetContentType('addressbook'));
 

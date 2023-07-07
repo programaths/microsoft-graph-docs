@@ -7,10 +7,10 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new BrowserSharedCookie();
-$requestBody->set@odatatype('#microsoft.graph.browserSharedCookie');
+$requestBody->setOdataType('#microsoft.graph.browserSharedCookie');
 
 $requestBody->setHostOrDomain('www.microsoft.com');
 
@@ -26,7 +26,7 @@ $requestBody->setPath('/');
 
 
 
-$result = $graphServiceClient->admin()->edge()->internetExplorerMode()->siteLists()->bySiteListId('browserSiteList-id')->sharedCookies()->post($requestBody);
+$result = $graphServiceClient->admin()->edge()->internetExplorerMode()->siteLists()->byBrowserSiteListId('browserSiteList-id')->sharedCookies()->post($requestBody);
 
 
 ```

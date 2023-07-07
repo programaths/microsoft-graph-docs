@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new ConditionalAccessPolicy();
 $requestBody->setDisplayName('Policy for risky sign-in block access');
@@ -15,9 +15,7 @@ $requestBody->setDisplayName('Policy for risky sign-in block access');
 $requestBody->setState(new ConditionalAccessPolicyState('enabled'));
 
 $conditions = new ConditionalAccessConditionSet();
-$conditions->setSignInRiskLevels([$conditions->setRiskLevel(new RiskLevel('high'));
-$conditions->setRiskLevel(new RiskLevel('medium'));
-]);
+$conditions->setSignInRiskLevels([new RiskLevel('high'),new RiskLevel('medium'),]);
 
 $conditionsApplications = new ConditionalAccessApplications();
 $conditionsApplications->setIncludeApplications(['All', ]);
@@ -34,8 +32,7 @@ $requestBody->setConditions($conditions);
 $grantControls = new ConditionalAccessGrantControls();
 $grantControls->setOperator('OR');
 
-$grantControls->setBuiltInControls([$grantControls->setConditionalAccessGrantControl(new ConditionalAccessGrantControl('block'));
-]);
+$grantControls->setBuiltInControls([new ConditionalAccessGrantControl('block'),]);
 
 
 $requestBody->setGrantControls($grantControls);

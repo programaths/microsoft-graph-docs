@@ -7,10 +7,10 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new AadUserConversationMember();
-$requestBody->set@odatatype('#microsoft.graph.aadUserConversationMember');
+$requestBody->setOdataType('#microsoft.graph.aadUserConversationMember');
 
 $requestBody->setRoles(['owner', ]);
 

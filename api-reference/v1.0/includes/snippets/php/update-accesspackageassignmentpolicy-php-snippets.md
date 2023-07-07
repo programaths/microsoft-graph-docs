@@ -7,7 +7,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 <?php
 
 // THIS SNIPPET IS A PREVIEW FOR THE KIOTA BASED SDK. NON-PRODUCTION USE ONLY
-$graphServiceClient = new GraphServiceClient($requestAdapter);
+$graphServiceClient = new GraphServiceClient($tokenRequestContext, $scopes);
 
 $requestBody = new AccessPackageAssignmentPolicy();
 $requestBody->setId('87e1c7f7-c7f7-87e1-f7c7-e187f7c7e187');
@@ -61,7 +61,7 @@ $stagesAccessPackageApprovalStage1->setIsEscalationEnabled(false);
 $stagesAccessPackageApprovalStage1->setDurationBeforeEscalation(new \DateInterval('PT0S'));
 
 $primaryApproversSubjectSet1 = new RequestorManager();
-$primaryApproversSubjectSet1->set@odatatype('#microsoft.graph.requestorManager');
+$primaryApproversSubjectSet1->setOdataType('#microsoft.graph.requestorManager');
 
 $primaryApproversSubjectSet1->setManagerLevel(1);
 
@@ -71,7 +71,7 @@ $stagesAccessPackageApprovalStage1->setPrimaryApprovers($primaryApproversArray);
 
 
 $fallbackPrimaryApproversSubjectSet1 = new SingleUser();
-$fallbackPrimaryApproversSubjectSet1->set@odatatype('#microsoft.graph.singleUser');
+$fallbackPrimaryApproversSubjectSet1->setOdataType('#microsoft.graph.singleUser');
 
 $fallbackPrimaryApproversSubjectSet1->setUserId('e6bf4d7d-6824-4dd0-809d-5bf42d4817c2');
 
@@ -100,7 +100,7 @@ $accessPackage->setId('49d2c59b-0a81-463d-a8ec-ddad3935d8a0');
 $requestBody->setAccessPackage($accessPackage);
 
 
-$result = $graphServiceClient->identityGovernance()->entitlementManagement()->assignmentPolicies()->byAssignmentPolicieId('accessPackageAssignmentPolicy-id')->put($requestBody);
+$result = $graphServiceClient->identityGovernance()->entitlementManagement()->assignmentPolicies()->byAccessPackageAssignmentPolicyId('accessPackageAssignmentPolicy-id')->put($requestBody);
 
 
 ```
